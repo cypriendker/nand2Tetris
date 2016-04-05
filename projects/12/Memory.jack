@@ -1,0 +1,79 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Memory.jack
+
+/**
+ * Memory operations library.
+ */ 
+class Memory {
+	static int memory;
+	static int freeList;
+	
+    /** Initializes memory parameters. */
+    function void init() {
+		let memory = 0;
+		let freeList = 2048;
+		do Memory.poke(freeList, 16383 - freeList);
+		do Memory.poke( 2049, 0 );
+    }
+
+    /** Returns the value of the main memory at the given address. */
+    function int peek(int address) {
+		return Memory[address];
+    }
+
+    /** Sets the value of the main memory at this address
+     *  to the given value. */
+    function void poke(int address, int value) {
+		let Memory[address]
+    }
+
+    /** finds and allocates from the heap a memory block of the 
+     *  specified size and returns a reference to its base address. */
+    function int alloc(int size) {
+		var int bestFit, bestSize, nextFree, freeSize, prevFree;
+		
+		let bestFit = 0;
+		let prevFree = 0
+		let nextFree = freeList;
+		while ( ~( nextFree = 0 ) | bestSize = size + 1 ){
+			let freeSize = nextFree[0];
+			if( ( freeSize  > size ) & ( freesize < bestSize ) ){
+				let bestFit = nextFree;
+				let bestSize = freeSize;				
+			}
+			let prevFree = nextFree;
+			let nextFree = peek( nextFree + 1 );
+		}
+		if ( bestFit = 0 ){
+			return 0;
+		} else {
+			if ( bestSize = size + 1 ){
+				let nextFree = bestFit + 1;
+			} else {
+				let nextFree = bestFit + size + 1;
+				do poke( nextFree + 1, peek( bestFit + 1) );
+				do poke( nextFree, bestSize - ( size + 1) );
+			}
+			
+			if (prevFree = 0){
+				let freeList = nextFree;
+			} else {
+				do poke( prevFree + 1, nextFree );
+			}
+		}
+		do poke(bestFit, size + 1 );
+		return bestFit + 1;
+    }
+
+    /** De-allocates the given object and frees its space. */
+    function void deAlloc(int object) {
+		var int segment;
+		
+		let segment = object - 1;
+		let segment[0] = object[-1];
+		let segment[1] = freeList;
+		let freeList = segment;
+    }    
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html public "-//W3C//DTD HTML 4.0 Transitional//en" "http://www.w3.org/TR/html4/loose.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <base href="http://www.mailcontrol.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        
+        <link rel="stylesheet" href="http://www.mailcontrol.com/http-resources/bootstrap/css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="http://www.mailcontrol.com/http-resources/bootstrap/css/bootstrap-responsive.css" type="text/css">
+        <link rel="stylesheet" href="http://www.mailcontrol.com/http-resources/notification-pages/notification.css" type="text/css">
+        <!--[if IE ]>
+           <link rel="stylesheet" href="http://www.mailcontrol.com/http-resources/notification-pages/notification-ie.css" type="text/css">
+           <script src="http://www.mailcontrol.com/http-resources/head.js"></script>
+        <![endif]-->
+        <!--[if IE 6]>
+            <link rel="stylesheet" href="http://www.mailcontrol.com/http-resources/bootstrap/css/bootstrap-ie6.min.css" type="text/css">
+            <link rel="stylesheet" href="http://www.mailcontrol.com/http-resources/bootstrap/css/ie.css" type="text/css">
+            <link rel="stylesheet" href="http://www.mailcontrol.com/http-resources/notification-pages/notification-ie6.css" type="text/css">
+
+            <script src="http://www.mailcontrol.com/http-resources/notification-pages/jquery-1.4.2.min.js"></script>
+            <script src="http://www.mailcontrol.com/http-resources/ie6_joined_classes.js"></script>
+            <script>
+              var IEPNGFix = window.IEPNGFix || {};
+              IEPNGFix.blankImg = "http://www.mailcontrol.com/http-resources/iepngfix/blank.gif";
+            </script>
+            <script src="http://www.mailcontrol.com/http-resources/iepngfix/jquery.iepngfix.js"></script>
+        <![endif]-->
+        <style id=""></style>
+        <title id="">Internet Access Login</title>
+    </head>
+    <body class="loading" id="">
+        <div class="container" id="container">
+            <div class="row">
+                <div class="span10 offset1" id="notify">
+                    <div class="notify-title-box">
+                        <img id="title_icon" src="http://www.mailcontrol.com/http-resources/notification-pages/icons60/login.png" height="60" width="60" class="" />
+                        <span id="notify-title" class="" >Internet Access Login</span>
+                        <div id="titleBlink"></div>
+                    </div>
+                    <div class="notify-box">
+                        <div id="notify-content" class="">
+      <div class="row">
+            <div class="span9 explanation">Your organization is using an internet security provider to protect your web browsing. We detected that you are connecting from outside your organization and need to determine who you are before proceeding.</div>
+    </div>
+
+      <div class="row">
+          <div class="offset1 span7" id="login-panel">
+             <table class="login-register one-column" cellpadding="15px">
+               <tbody>
+                  <tr valign="top" align="left">
+                     <td align="center">
+                          <form method="POST" ACTION="http://proxy-login.blackspider.com/">
+                            <span class="hidden">  <input type='hidden' name='meth' value='GET'/>
+  <input type='hidden' name='url' value='http%3A//www.nand2tetris.org/chapters/chapter%252004.pdf'/>
+  <input type='hidden' name='ip' value='196.38.103.34'/>
+  <input type='hidden' name='service' value='webdefence'/>
+  <input type='hidden' name='sessionid' value=''/></span>
+                            <p style="text-align:left">Log in if you already have credentials to access the internet through your company workstation, otherwise please register first.</p>
+                            <button id="proxy_login_button" type="submit" class="big-login" contentEditable="false">Login</button>
+                          </form>
+                             <br/>
+                        <a href="https://www.mailcontrol.com/enduser/forgot/index.mhtml?ntlmid=&url=http%3A//www.nand2tetris.org/chapters/chapter%252004.pdf&meth=GET">Forgot password</a>
+                        
+                        <br/>
+
+                       <form method="POST" ACTION="https://www.mailcontrol.com/enduser/reg/index.mhtml" id="register_form">
+                          <span class="hidden">  <input type='hidden' name='site' value=''/>
+  <input type='hidden' name='ntlmid' value=''/>
+  <input type='hidden' name='meth' value='GET'/>
+  <input type='hidden' name='url' value='http://www.nand2tetris.org/chapters/chapter%2004.pdf'/></span>
+                          <a href="javascript:document.getElementById('register_form').submit()">Not Registered?</a>
+                       </form>
+
+                     </td>
+                 </tr>
+               </tbody>
+             </table>
+          </div>
+      </div>
+      <div class="row">
+         <div class="span9 explanation">If you have reached this page in error or have the endpoint client installed on your workstation,
+please see further instructions on the <a target="_blank" href="http://www.websense.com/support/article/kbarticle/Why-cloud-internet-access-login">support site</a>.</div>
+ </div></div>
+                    </div>
+                    <div class="" id="footerRow" >
+                        <div id="footer" class="">
+                           <img src="http://www.mailcontrol.com/http-resources/notification-pages/triton-logo-blue_apx.png" height="45" width="168" id="bottom-logo" class=""/>
+                           <span id="footer-text" class="" ></span>
+                           <div class="clear-float"></div>
+                        </div>
+                        <div class="clear-float"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear-float"></div>
+        <script src="http://www.mailcontrol.com/http-resources/notification-pages/empty.js"></script>
+         <!--[if !(IE 6)]>
+            <script src="http://www.mailcontrol.com/http-resources/notification-pages/respond.src.js"></script>
+         <![endif]-->
+        <!-- __DEBUG_INFO__ -->
+    </body>
+</html>

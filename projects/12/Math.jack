@@ -1,0 +1,139 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Math.jack
+
+/**
+ * A basic math library.
+ */
+class Math {
+
+	static Array twoToThe;
+	static int n;
+	static in r;
+	
+    /** Initializes the library. */
+    function void init() {
+		var int i;
+		var int b;
+		
+		let i = 0;
+		let b = 1;
+		let n = 16;
+		let twoToThe = Array.new( n );
+		
+		while ( i < 16 ){
+			let twoToThe[i] = b;
+			let b = b + b;
+			let i = i + 1;
+		}
+		return;
+    }
+	
+	function boolean bit(int x, int j){
+		var int temp;
+		var boolean out;
+		
+		let temp = (twoToThe[j] & x);
+		let out = ( temp = twoToThe[j] );
+		
+		return out;
+	}
+
+    /** Returns the absolute value of x. */
+    function int abs(int x) {
+		var int out;
+		
+		if ( x < 0 ){
+			let out = -x; 
+		} else {
+			let out = x;
+		}
+		return out;
+    }
+
+    /** Returns the product of x and y. */
+    function int multiply(int x, int y) {
+		var int sum;
+		var int shiftedX;
+		var int j, bit;
+		
+		let bit = 1;
+		let j = 0;
+		let sum = 0;
+		let shiftedX = x;
+		while ( j<n ){
+			if ( (y&bit) = bit ){
+				let sum = sum + shiftedX;
+			}
+			let bit = bit + bit;
+			let shiftedX = shiftedX + shiftedX;
+			let j = j+1;
+		}
+		return sum;
+    }
+
+    /** Returns the integer part of x/y. */
+    function int divide(int x, int y) {
+		var int q, out;
+		var int x_o, y_o;
+		
+		let x_o = Math.abs(x);
+		let y_o = Math.abs(y);
+		
+		if ( ( y_o > x_o ) | ( ( y_o + y_o ) < 0 ) ){
+			let r = x_o;
+			return 0;
+		}
+		
+		let q = Math.divide( x_o, y_o +y_o);
+		if ( r < y_o ){
+			let out = q+q;
+		} else {
+			let out = q+q + 1;
+			let r = r - y_o;
+		}
+		if ( ( ~(x = x_o) & (y = y_o) )|( (x = x_o) & ~(y = y_o) ) ) {
+			return -out;
+		} else {
+			return out;
+		}
+	
+    }
+
+    /** Returns the integer part of the square root of x. */
+    function int sqrt(int x) {
+		var int y,j;
+		var int temp;
+		
+		let y = 0;
+		let j = (n/2) - 1;
+		while ( j > (-1) ){
+			let temp = y + twoToThe[j];
+			let temp = temp * temp;		
+			if( ( ( temp < x ) | ( temp = x ) ) & ( temp > 0 ) ) {
+					let y = y + twoToThe[j];
+			} 
+			let j = j-1;
+		}
+		return y;
+	}
+
+    /** Returns the greater number. */
+    function int max(int a, int b) {
+		if ( a > b ){
+			return a;
+		} else {
+			return b;
+		}
+    }
+
+    /** Returns the smaller number. */
+    function int min(int a, int b) {
+		if ( a < b ){
+			return a;
+		} else {
+			return b;
+		}
+    }
+}

@@ -1,0 +1,21 @@
+// Pseudo code
+
+n = 8191 + SCREEN
+(LOOP)
+If (key = 0) GOTO WHITE
+
+(BLACK)
+i = SCREEN
+(LOOPBLACK)
+RAM[i]=-1
+i ++
+IF i<=n GOTO LOOPBLACK
+GOTO LOOP
+
+(WHITE)
+i = SCREEN
+(LOOPWHITE)
+RAM[i]=0
+i ++
+IF i<=n GOTO WHITE
+GOTO LOOP

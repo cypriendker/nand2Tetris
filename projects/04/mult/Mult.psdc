@@ -1,0 +1,12 @@
+R0
+R1
+R2
+
+R2 = R1
+i = 1
+
+R2 = R1 + R2
+i = i + 1
+(Loop if i < R0)
+
+end loop
